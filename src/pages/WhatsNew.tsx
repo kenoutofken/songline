@@ -48,7 +48,7 @@ const WhatsNew = () => {
 
         <div className="mb-5">
           <h1 className="font-display text-2xl font-semibold text-foreground">What's new</h1>
-          <p className="mt-1 text-sm text-muted-foreground">New features and small improvements from LifePlayback.</p>
+          <p className="mt-1 text-sm text-muted-foreground">New features and small improvements from Songline.</p>
         </div>
 
         <div className="space-y-3">

@@ -48,7 +48,7 @@ serve(async (req) => {
       .join("\n");
 
     // The model returns ids instead of full objects so the server can verify matches against real rows.
-    const systemPrompt = `You are a memory matching engine for LifePlayback, a music memory journal app.
+    const systemPrompt = `You are a memory matching engine for Songline, a music memory journal app.
 
 Given a user's prompt, return ONLY a JSON object with:
 - "ids": an array of memory IDs that match the user's request, ordered by relevance (most relevant first)

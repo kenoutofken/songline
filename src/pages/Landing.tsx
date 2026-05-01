@@ -32,6 +32,7 @@ interface LandingProps {
 const Landing = ({ onGetStarted, onSignIn }: LandingProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedSlide = slides[selectedIndex] ?? slides[0];
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -59,28 +60,24 @@ const Landing = ({ onGetStarted, onSignIn }: LandingProps) => {
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-black/55" />
-              <div className="relative z-10 flex min-h-screen flex-col items-center justify-end px-6 pb-56 pt-20 text-center">
-                <div className="w-full max-w-sm">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-                    LifePlayback
-                  </p>
-                  <h2 className="font-display text-4xl font-semibold leading-tight text-white">
-                    {slide.title}
-                  </h2>
-                  <p className="mx-auto mt-4 max-w-[310px] text-base leading-relaxed text-white/78">
-                    {slide.description}
-                  </p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-20 px-6 pb-8">
-        <div className="mx-auto flex w-full max-w-sm flex-col items-center">
-          {/* Dots */}
-          <div className="mb-8 flex gap-2">
+      <div className="absolute inset-x-0 top-1/2 z-20 -translate-y-1/2 px-6 py-10">
+        <div className="mx-auto flex w-full max-w-sm flex-col items-center text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+            Songline
+          </p>
+          <h2 className="font-display text-4xl font-semibold leading-tight text-white">
+            {selectedSlide.title}
+          </h2>
+          <p className="mx-auto mt-4 max-w-[310px] text-base leading-relaxed text-white/78">
+            {selectedSlide.description}
+          </p>
+
+          <div className="mb-8 mt-10 flex gap-2">
           {slides.map((_, i) => (
             <PressableButton
               key={i}
@@ -95,7 +92,6 @@ const Landing = ({ onGetStarted, onSignIn }: LandingProps) => {
           ))}
           </div>
 
-          {/* CTA */}
           <PressableButton
             onClick={onGetStarted}
             className="w-full rounded-lg bg-white py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/90"

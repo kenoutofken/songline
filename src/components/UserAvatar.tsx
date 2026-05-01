@@ -407,7 +407,7 @@ const UserAvatar = () => {
                   <Megaphone size={18} className="shrink-0 text-primary" />
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-medium text-foreground">What's new</span>
-                    <span className="block truncate text-xs text-muted-foreground">Latest LifePlayback updates</span>
+                    <span className="block truncate text-xs text-muted-foreground">Latest Songline updates</span>
                   </span>
                   <ChevronRight size={16} className="shrink-0 text-muted-foreground" />
                 </PressableButton>
